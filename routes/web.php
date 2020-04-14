@@ -21,10 +21,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Admin Management
 Route::prefix('/admin')->namespace('Admin')->group(function () {
 
-    Route::match(['get','post'],'/login','AdminController@login');
+//    Admin Login Route
+    Route::match(['get', 'post'], '/login', 'AdminController@login');
 
-    Route::get('/', 'AdminController@index');
+//    Route Middleware is admin
+    Route::group(['middleware' => ['admin']], function () {
+        Route::get('/', 'AdminController@index');
+    });
+
 
 });
