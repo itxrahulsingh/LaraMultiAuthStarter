@@ -1,0 +1,288 @@
+/*
+ * Copyright (c) 2020.  Rahul Singh - All Rights Reserved
+ *  Unauthorized copying of this file, via any medium is strictly prohibited
+ *  Proprietary and confidential
+ *  Author : Rahul Singh rahulsingh4041@gmail.com, @itxrahulsingh
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px!important;
+}
+
+
+.tsearch {
+    height: 45px !important;
+    margin-top: -8px !important;
+}
+
+.rnav-btn {
+    color: white !important;
+    font-size: large;
+    margin-left: 10px;
+    font-weight: 300 !important;
+}
+
+/**** Dashboard Cards ***********/
+
+.dc-card{
+    box-shadow: 2px 2px 10px #DADADA;
+    margin: 5px;
+    padding: 20px 10px;
+    background-color: #fff!important;
+    height: 100px;
+    border-radius: 5px;
+    transition: .3s linear all;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dc-card:hover{
+    box-shadow: 4px 4px 20px #DADADA;
+    transition: .3s linear all;
+}
+
+.dc-card .dc-icon{
+    font-size: 5em;
+    opacity: 0.2;
+    /*margin-left: -10px!important;*/
+    transform: rotate(15deg);
+    color: black!important;
+}
+
+.dc-card .dc-count{
+    position: absolute!important;
+    right: 35px;
+    top: 20px;
+    font-size: 32px;
+    display: block!important;
+    color: black!important;
+}
+
+.dc-card .dc-name{
+    position: absolute!important;
+    right: 35px;
+    top: 65px;
+    font-style: italic;
+    text-transform: capitalize;
+    opacity: 0.5;
+    display: block!important;
+    color: black!important;
+    font-size: 18px;
+}
+
+/******** End Dashbard Cards ***********/
+
+#Sidenav {
+    display: flex;
+}
+
+#Sidenav #Sidenav_nav {
+    flex-basis: 200px;
+    flex-shrink: 0;
+    transition: transform 0.15s ease-in-out;
+    z-index: 1038;
+    transform: translateX(-200px);
+    background-color: #333;
+}
+
+#Sidenav #content_section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    flex-grow: 1;
+    min-height: calc(100vh - 45px);
+    margin-left: -200px;
+    background-color: whitesmoke!important;
+}
+
+.sidenav-toggled #Sidenav #Sidenav_nav {
+    transform: translateX(0);
+}
+
+.sidenav-toggled #Sidenav #content_section:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 1037;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+
+@media (min-width: 992px) {
+    #Sidenav #Sidenav_nav {
+        transform: translateX(0);
+    }
+
+    #Sidenav #content_section {
+        margin-left: 0;
+        transition: margin 0.15s ease-in-out;
+    }
+
+    .sidenav-toggled #Sidenav #Sidenav_nav {
+        transform: translateX(-200px);
+    }
+
+    .sidenav-toggled #Sidenav #content_section {
+        margin-left: -200px;
+    }
+
+    .sidenav-toggled #Sidenav #content_section:before {
+        display: none;
+    }
+}
+
+.nav-fixed .topnav {
+    z-index: 1039;
+}
+
+.nav-fixed #Sidenav #Sidenav_nav {
+    width: 200px;
+    z-index: 1038;
+}
+
+.nav-fixed #Sidenav #Sidenav_nav .sidenav .sidenav-menu {
+    overflow-y: auto;
+}
+
+.nav .nav-link .nav-link-icon,
+.sidenav-menu .nav-link .nav-link-icon {
+    margin-right: 0.5rem;
+}
+
+.topnav {
+    padding-left: 0;
+    height: 50px;
+    z-index: 1039;
+}
+
+.topnav .navbar-brand {
+    width: 200px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0;
+}
+
+.topnav.navbar-dark #sidebarToggle {
+    color: white;
+}
+
+.topnav.navbar-light #sidebarToggle {
+    color: #212529;
+}
+
+.sidenav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-wrap: nowrap;
+}
+
+.sidenav .sidenav-menu {
+    flex-grow: 1;
+    background-color: white;
+    box-shadow: 5px 0 5px -5px #333;
+}
+
+.sidenav .sidenav-menu .nav {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.sidenav .sidenav-menu .nav .sidenav-heading {
+    padding: 0.5rem 1rem 0.5rem;
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: whitesmoke;
+    color: #0b1526;
+}
+
+.sidenav .sidenav-menu .nav .nav-link {
+    display: flex;
+    font-size: 0.80rem;
+    align-items: center;
+    position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px;
+    color: #0b1526;
+}
+
+.sidenav .sidenav-menu .nav .nav-link:hover, .sidenav .sidenav-menu .nav .nav-link:active {
+    color: white !important;
+    background-color: #2962FF;
+    border-radius: 5px;
+    padding-left: 15px;
+    transition: all ease 0.20s;
+}
+
+.sidenav .sidenav-menu .nav .nav-link .nav-link-icon {
+    font-size: 0.9rem;
+}
+
+.sidenav .sidenav-menu .nav .nav-link .nav-link-icon:hover, .sidenav .sidenav-menu .nav .nav-link .nav-link-icon:active {
+    color: white !important;
+}
+
+.sidenav .sidenav-menu .nav .nav-link .sidenav-collapse-arrow {
+    display: inline-block;
+    margin-left: auto;
+    transition: transform 0.15s ease;
+}
+
+.sidenav .sidenav-menu .nav .nav-link.collapsed .sidenav-collapse-arrow {
+    transform: rotate(-90deg);
+}
+
+.sidenav .sidenav-menu .nav .sidenav-menu-nested {
+    flex-direction: column;
+}
+
+.sidenav .sidenav-footer {
+    padding: 0.5rem;
+    flex-shrink: 0;
+}
+
+ Dropdown Animation
+.dropdown-menu {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: .25s ease all;
+    border-radius: 0;
+}
+
+.dropdown-menu.show {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: .25s ease all;
+}
+
+
+.float{
+    position:fixed;
+    bottom:40px;
+    right:40px;
+    border-radius:50px;
+    text-align:center;
+    font-size:20px;
+    padding: .400rem 1rem;
+    box-shadow: 0 8px 12px -6px black;
+}
+
+footer {
+    background-color: white;
+}
