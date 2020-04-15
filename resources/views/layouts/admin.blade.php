@@ -49,29 +49,30 @@
             <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 
-{{--                @if(file_exists(asset('/storage/uploads/avatar/'.Auth::User()->avatar)))--}}
-{{--                    <img class="rounded-circle" width="30" height="30"--}}
-{{--                         src="{{ asset('/storage/uploads/avatar/'.Auth::User()->avatar) }}">--}}
-{{--                @elseif(!empty(Auth::user()->avatar))--}}
-{{--                    <img class="rounded-circle" src="{{ auth()->user()->avatar }}" alt="avatar" width="30" height="30">--}}
-{{--                @else--}}
-{{--                    <img class="rounded-circle" width="30" height="30"--}}
-{{--                         src="{{ asset('/storage/uploads/avatar/default.png') }}">--}}
-{{--                @endif--}}
-{{--                                {{ ucwords(Auth::user()->name) }} <span class="caret"></span>--}}
+                {{--                @if(file_exists(asset('/storage/uploads/avatar/'.Auth::User()->avatar)))--}}
+                {{--                    <img class="rounded-circle" width="30" height="30"--}}
+                {{--                         src="{{ asset('/storage/uploads/avatar/'.Auth::User()->avatar) }}">--}}
+                {{--                @elseif(!empty(Auth::user()->avatar))--}}
+                {{--                    <img class="rounded-circle" src="{{ auth()->user()->avatar }}" alt="avatar" width="30" height="30">--}}
+                {{--                @else--}}
+                {{--                    <img class="rounded-circle" width="30" height="30"--}}
+                {{--                         src="{{ asset('/storage/uploads/avatar/default.png') }}">--}}
+                {{--                @endif--}}
+                {{ ucwords(Auth::guard('admin')->user()->name) }} <span class="caret"></span>
             </a>
 
             <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#"> <i class="far fa-user-circle"></i>&nbsp;&nbsp;{{ __('Profile') }}
                 </a>
-                <a class="dropdown-item" href="#"> <i class="fas fa-cog"></i>&nbsp;&nbsp;{{ __('Settings') }}</a>
-                <a class="dropdown-item" href="{{ route('logout') }}"
+                <a class="dropdown-item" href="{{ route('admin.settings') }}"> <i
+                        class="fas fa-cog"></i>&nbsp;&nbsp;{{ __('Settings') }}</a>
+                <a class="dropdown-item" href="{{ route('admin.logout') }}"
                    onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">
                     <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;{{ __('Logout') }}
                 </a>
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
             </div>

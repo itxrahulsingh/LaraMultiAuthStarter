@@ -22,7 +22,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-
 // Admin Management
 Route::prefix('/admin')->namespace('Admin')->group(function () {
 
@@ -32,7 +31,10 @@ Route::prefix('/admin')->namespace('Admin')->group(function () {
 //    Route Middleware is admin
     Route::group(['middleware' => ['admin']], function () {
         Route::get('/', 'AdminController@index');
-        Route::get('logout', 'AdminController@logout')->name('admin.logout');
+        Route::get('settings', 'AdminController@settings')->name('admin.settings');
+        Route::post('logout', 'AdminController@logout')->name('admin.logout');
+
+        Route::post('updatePwd', 'AdminController@updatePwd')->name('admin.updatePwd');
     });
 
 
