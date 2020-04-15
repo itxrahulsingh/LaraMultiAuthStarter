@@ -1,9 +1,8 @@
 /*
- *  Copyright (c) 2020.  Rahul Singh - All Rights Reserved
+ * Copyright (c) 2020.  Rahul Singh - All Rights Reserved
  *  Unauthorized copying of this file, via any medium is strictly prohibited
  *  Proprietary and confidential
  *  Author : Rahul Singh rahulsingh4041@gmail.com, @itxrahulsingh
- *
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
@@ -177,6 +176,10 @@ body {
     color: white;
 }
 
+.topnav.navbar-light #sidebarToggle {
+    color: #212529;
+}
+
 .sidenav {
     display: flex;
     flex-direction: column;
@@ -250,68 +253,24 @@ body {
     flex-shrink: 0;
 }
 
-/* Dropdown Animation */
-/*.dropdown-menu {*/
-/*    display: block;*/
-/*    visibility: hidden;*/
-/*    opacity: 0;*/
-/*    transform: translateY(50px);*/
-/*    transition: .25s ease all;*/
-/*    border-radius: 0;*/
-/*}*/
-
-/*.dropdown-menu.show {*/
-/*    display: block;*/
-/*    visibility: visible;*/
-/*    opacity: 1;*/
-/*    transform: translateY(0px);*/
-/*    transition: .25s ease all;*/
-/*}*/
-
-
-.dropdown-menu[x-placement^=top], .dropdown-menu[x-placement^=right], .dropdown-menu[x-placement^=bottom], .dropdown-menu[x-placement^=left] {
-    right: auto;
-    bottom: auto;
-}
-
-.dropdown-divider {
-    height: 0;
-    margin: 0.5rem 0;
-    overflow: hidden;
-    border-top: 1px solid #e9ecef;
-}
-
-.dropdown-item {
+ Dropdown Animation
+.dropdown-menu {
     display: block;
-    width: 100%;
-    padding: 0.25rem 1.5rem;
-    clear: both;
-    font-weight: 400;
-    color: #212529;
-    text-align: inherit;
-    white-space: nowrap;
-    background-color: transparent;
-    border: 0;
-}
-.dropdown-item:hover, .dropdown-item:focus {
-    color: #16181b;
-    text-decoration: none;
-    background-color: #f8f9fa;
-}
-.dropdown-item.active, .dropdown-item:active {
-    color: #fff;
-    text-decoration: none;
-    background-color: #007bff;
-}
-.dropdown-item.disabled, .dropdown-item:disabled {
-    color: #6c757d;
-    pointer-events: none;
-    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: .25s ease all;
+    border-radius: 0;
 }
 
 .dropdown-menu.show {
     display: block;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: .25s ease all;
 }
+
 
 .float{
     position:fixed;

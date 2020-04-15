@@ -16,7 +16,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/libs.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/datatables.min.css') }}"/>
     @stack('styles')
 
@@ -108,13 +108,17 @@
                        aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="nav-link-icon"><i class="fas fa-columns"></i></div>
                         {{ __('Dropdown') }}
-                        <div class="sidenav-collapse-arrow"><i class="material-icons">keyboard_arrow_down</i></div>
+                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                          data-parent="#sidenavAccordion">
                         <nav class="sidenav-menu-nested nav">
-                            <a class="nav-link" href="#">{{ __('Dropdown item') }}</a>
-                            <a class="nav-link" href="#">{{ __('Dropdown item') }}</a>
+                            <a class="nav-link" href="#">
+                                <div class="nav-link-icon"><i class="fas fa-dot-circle"></i></div>
+                                {{ __('Dropdown item') }}</a>
+                            <a class="nav-link" href="#">
+                                <div class="nav-link-icon"><i class="fas fa-dot-circle"></i></div>
+                                {{ __('Dropdown item') }}</a>
                         </nav>
                     </div>
 
@@ -154,9 +158,10 @@
 </div>
 
 {{-- Scripts --}}
-<script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ asset('js/libs.js') }}"></script>
-<script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+<script src="{{ asset('js/admin.js') }}" defer></script>
+<script src="{{ asset('js/font-awesome-5.js') }}"></script>
+<script src="{{ asset('js/jquery-3.4.1.slim.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 {{---- DataTables --}}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>

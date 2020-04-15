@@ -7,7 +7,7 @@
 
         <h1>Settings</h1>
 
-        <div class="card w-50">
+        <div class="card col-sm-12 col-md-6">
             <div class="card-header">
                 Update Password <span class="float-right">{{ ucfirst($admin->name) }}</span>
             </div>
