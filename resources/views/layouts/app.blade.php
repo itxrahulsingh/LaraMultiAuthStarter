@@ -75,5 +75,7 @@
     </div>
 
     <script src="{{ asset('js/font-awesome-5.js') }}" defer></script>
+    <script src="{{ asset('js/jquery-3.4.1.slim.min.js') }}" defer></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
 </body>
 </html>

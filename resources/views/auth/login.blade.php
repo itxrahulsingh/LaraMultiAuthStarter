@@ -1,6 +1,27 @@
-@extends('layouts.auth')
+@extends('layouts.app')
+
 
 @section('content')
+        <style>
+            /* Line Seperator with between Text */
+            .separator {
+                display: flex;
+                align-items: center;
+                text-align: center;
+            }
+            .separator::before, .separator::after {
+                content: '';
+                flex: 1;
+                border-bottom: 1px solid gray;
+            }
+            .separator::before {
+                margin-right: .25em;
+            }
+            .separator::after {
+                margin-left: .25em;
+            }
+            /* End saperator*/
+        </style>
 
     <div class="container auth-container">
         <div class="row">
@@ -75,7 +96,6 @@
 
                         <div class="separator pb-4">OR</div>
                         <div class="form-group">
-
 {{--                            <a href="{{ route('login.redirect', 'facebook') }}" class="btn btn-primary btn-block">--}}
 {{--                                Login with Facebook--}}
 {{--                            </a>--}}

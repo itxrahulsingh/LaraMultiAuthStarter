@@ -48,16 +48,6 @@
         <li class="nav-item dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-
-                {{--                @if(file_exists(asset('/storage/uploads/avatar/'.Auth::User()->avatar)))--}}
-                {{--                    <img class="rounded-circle" width="30" height="30"--}}
-                {{--                         src="{{ asset('/storage/uploads/avatar/'.Auth::User()->avatar) }}">--}}
-                {{--                @elseif(!empty(Auth::user()->avatar))--}}
-                {{--                    <img class="rounded-circle" src="{{ auth()->user()->avatar }}" alt="avatar" width="30" height="30">--}}
-                {{--                @else--}}
-                {{--                    <img class="rounded-circle" width="30" height="30"--}}
-                {{--                         src="{{ asset('/storage/uploads/avatar/default.png') }}">--}}
-                {{--                @endif--}}
                 {{ ucwords(Auth::guard('admin')->user()->name) }} <span class="caret"></span>
             </a>
 
